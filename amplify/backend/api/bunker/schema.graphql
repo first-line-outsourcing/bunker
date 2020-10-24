@@ -40,3 +40,7 @@ type Card @model {
   text: String
   players: [PlayerCard] @connection(keyName: "byCard", fields: ["id"])
 }
+
+type Query {
+  startGame(userId: String): String @function(name: "startGame-${env}")
+}
