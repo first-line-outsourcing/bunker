@@ -1,23 +1,21 @@
 <template>
-  <div class="row pr-3 pl-3">
-    <div class="col-md-4" v-for="player of players">
-      <PlayerComponent v-bind:player="player"></PlayerComponent>
-    </div>
+  <div class="text-center w-100">
+    <button class="btn btn-lg btn-success font-weight-bold">Новая игра</button>
   </div>
 </template>
 
 <script lang="ts">
-  import { Player } from '@/components/interfaces';
-  import { PLAYERS } from '@/components/mock/mock.service';
-  import PlayerComponent from '@/components/Player.vue';
-  import { Component, Vue } from 'vue-property-decorator';
+import { Player } from "@/components/interfaces";
+import { PLAYERS } from "@/components/mock/mock.service";
+import PlayerComponent from "@/components/Player.vue";
+import { Component, Vue } from "vue-property-decorator";
 
-  @Component({
-    components: {
-      PlayerComponent,
-    },
-  })
-  export default class Home extends Vue {
-    private players: Player[] = PLAYERS;
+@Component({
+  components: {
+    PlayerComponent
   }
+})
+export default class Home extends Vue {
+  private players: Player[] = PLAYERS;
+}
 </script>
