@@ -1,0 +1,394 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Card {
+  category: String
+  createdAt: AWSDateTime!
+  id: ID!
+  players(filter: ModelPlayerCardFilterInput, limit: Int, nextToken: String, playerID: ModelIDKeyConditionInput, sortDirection: ModelSortDirection): ModelPlayerCardConnection
+  text: String
+  title: String
+  updatedAt: AWSDateTime!
+}
+
+type Game {
+  createdAt: AWSDateTime!
+  host: Player
+  id: ID!
+  players(filter: ModelPlayerFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelPlayerConnection
+  updatedAt: AWSDateTime!
+}
+
+type ModelCardConnection {
+  items: [Card]
+  nextToken: String
+}
+
+type ModelGameConnection {
+  items: [Game]
+  nextToken: String
+}
+
+type ModelPlayerCardConnection {
+  items: [PlayerCard]
+  nextToken: String
+}
+
+type ModelPlayerConnection {
+  items: [Player]
+  nextToken: String
+}
+
+type ModelUserConnection {
+  items: [User]
+  nextToken: String
+}
+
+type Mutation {
+  createCard(condition: ModelCardConditionInput, input: CreateCardInput!): Card
+  createGame(condition: ModelGameConditionInput, input: CreateGameInput!): Game
+  createPlayer(condition: ModelPlayerConditionInput, input: CreatePlayerInput!): Player
+  createPlayerCard(condition: ModelPlayerCardConditionInput, input: CreatePlayerCardInput!): PlayerCard
+  createUser(condition: ModelUserConditionInput, input: CreateUserInput!): User
+  deleteCard(condition: ModelCardConditionInput, input: DeleteCardInput!): Card
+  deleteGame(condition: ModelGameConditionInput, input: DeleteGameInput!): Game
+  deletePlayer(condition: ModelPlayerConditionInput, input: DeletePlayerInput!): Player
+  deletePlayerCard(condition: ModelPlayerCardConditionInput, input: DeletePlayerCardInput!): PlayerCard
+  deleteUser(condition: ModelUserConditionInput, input: DeleteUserInput!): User
+  updateCard(condition: ModelCardConditionInput, input: UpdateCardInput!): Card
+  updateGame(condition: ModelGameConditionInput, input: UpdateGameInput!): Game
+  updatePlayer(condition: ModelPlayerConditionInput, input: UpdatePlayerInput!): Player
+  updatePlayerCard(condition: ModelPlayerCardConditionInput, input: UpdatePlayerCardInput!): PlayerCard
+  updateUser(condition: ModelUserConditionInput, input: UpdateUserInput!): User
+}
+
+type Player {
+  cards(cardID: ModelIDKeyConditionInput, filter: ModelPlayerCardFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelPlayerCardConnection
+  createdAt: AWSDateTime!
+  game: Game
+  gameID: ID!
+  id: ID!
+  updatedAt: AWSDateTime!
+  user: User
+  userID: ID!
+}
+
+type PlayerCard {
+  card: Card!
+  cardID: ID!
+  createdAt: AWSDateTime!
+  id: ID!
+  player: Player!
+  playerID: ID!
+  updatedAt: AWSDateTime!
+}
+
+type Query {
+  getCard(id: ID!): Card
+  getGame(id: ID!): Game
+  getPlayer(id: ID!): Player
+  getUser(id: ID!): User
+  listCards(filter: ModelCardFilterInput, limit: Int, nextToken: String): ModelCardConnection
+  listGames(filter: ModelGameFilterInput, limit: Int, nextToken: String): ModelGameConnection
+  listPlayers(filter: ModelPlayerFilterInput, limit: Int, nextToken: String): ModelPlayerConnection
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection
+}
+
+type Subscription {
+  onCreateCard: Card
+  onCreateGame: Game
+  onCreatePlayer: Player
+  onCreatePlayerCard: PlayerCard
+  onCreateUser: User
+  onDeleteCard: Card
+  onDeleteGame: Game
+  onDeletePlayer: Player
+  onDeletePlayerCard: PlayerCard
+  onDeleteUser: User
+  onUpdateCard: Card
+  onUpdateGame: Game
+  onUpdatePlayer: Player
+  onUpdatePlayerCard: PlayerCard
+  onUpdateUser: User
+}
+
+type User {
+  createdAt: AWSDateTime!
+  id: ID!
+  name: String!
+  players(filter: ModelPlayerFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelPlayerConnection
+  updatedAt: AWSDateTime!
+}
+
+enum ModelAttributeTypes {
+  _null
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+input CreateCardInput {
+  category: String
+  id: ID
+  text: String
+  title: String
+}
+
+input CreateGameInput {
+  gameHostId: ID
+  id: ID
+}
+
+input CreatePlayerCardInput {
+  cardID: ID!
+  id: ID
+  playerID: ID!
+}
+
+input CreatePlayerInput {
+  gameID: ID!
+  id: ID
+  playerGameId: ID
+  playerUserId: ID
+  userID: ID!
+}
+
+input CreateUserInput {
+  id: ID
+  name: String!
+}
+
+input DeleteCardInput {
+  id: ID
+}
+
+input DeleteGameInput {
+  id: ID
+}
+
+input DeletePlayerCardInput {
+  id: ID
+}
+
+input DeletePlayerInput {
+  id: ID
+}
+
+input DeleteUserInput {
+  id: ID
+}
+
+input ModelBooleanInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  eq: Boolean
+  ne: Boolean
+}
+
+input ModelCardConditionInput {
+  and: [ModelCardConditionInput]
+  category: ModelStringInput
+  not: ModelCardConditionInput
+  or: [ModelCardConditionInput]
+  text: ModelStringInput
+  title: ModelStringInput
+}
+
+input ModelCardFilterInput {
+  and: [ModelCardFilterInput]
+  category: ModelStringInput
+  id: ModelIDInput
+  not: ModelCardFilterInput
+  or: [ModelCardFilterInput]
+  text: ModelStringInput
+  title: ModelStringInput
+}
+
+input ModelFloatInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+}
+
+input ModelGameConditionInput {
+  and: [ModelGameConditionInput]
+  not: ModelGameConditionInput
+  or: [ModelGameConditionInput]
+}
+
+input ModelGameFilterInput {
+  and: [ModelGameFilterInput]
+  id: ModelIDInput
+  not: ModelGameFilterInput
+  or: [ModelGameFilterInput]
+}
+
+input ModelIDInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+  size: ModelSizeInput
+}
+
+input ModelIDKeyConditionInput {
+  beginsWith: ID
+  between: [ID]
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+}
+
+input ModelIntInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelPlayerCardConditionInput {
+  and: [ModelPlayerCardConditionInput]
+  cardID: ModelIDInput
+  not: ModelPlayerCardConditionInput
+  or: [ModelPlayerCardConditionInput]
+  playerID: ModelIDInput
+}
+
+input ModelPlayerCardFilterInput {
+  and: [ModelPlayerCardFilterInput]
+  cardID: ModelIDInput
+  id: ModelIDInput
+  not: ModelPlayerCardFilterInput
+  or: [ModelPlayerCardFilterInput]
+  playerID: ModelIDInput
+}
+
+input ModelPlayerConditionInput {
+  and: [ModelPlayerConditionInput]
+  gameID: ModelIDInput
+  not: ModelPlayerConditionInput
+  or: [ModelPlayerConditionInput]
+  userID: ModelIDInput
+}
+
+input ModelPlayerFilterInput {
+  and: [ModelPlayerFilterInput]
+  gameID: ModelIDInput
+  id: ModelIDInput
+  not: ModelPlayerFilterInput
+  or: [ModelPlayerFilterInput]
+  userID: ModelIDInput
+}
+
+input ModelSizeInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelStringInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+  size: ModelSizeInput
+}
+
+input ModelUserConditionInput {
+  and: [ModelUserConditionInput]
+  name: ModelStringInput
+  not: ModelUserConditionInput
+  or: [ModelUserConditionInput]
+}
+
+input ModelUserFilterInput {
+  and: [ModelUserFilterInput]
+  id: ModelIDInput
+  name: ModelStringInput
+  not: ModelUserFilterInput
+  or: [ModelUserFilterInput]
+}
+
+input UpdateCardInput {
+  category: String
+  id: ID!
+  text: String
+  title: String
+}
+
+input UpdateGameInput {
+  gameHostId: ID
+  id: ID!
+}
+
+input UpdatePlayerCardInput {
+  cardID: ID
+  id: ID!
+  playerID: ID
+}
+
+input UpdatePlayerInput {
+  gameID: ID
+  id: ID!
+  playerGameId: ID
+  playerUserId: ID
+  userID: ID
+}
+
+input UpdateUserInput {
+  id: ID!
+  name: String
+}
+
+
+"The `AWSDateTime` scalar type provided by AWS AppSync, represents a valid ***extended*** [ISO 8601 DateTime](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) string. In other words, this scalar type accepts datetime strings of the form `YYYY-MM-DDThh:mm:ss.SSSZ`.  The scalar can also accept \"negative years\" of the form `-YYYY` which correspond to years before `0000`. For example, \"**-2017-01-01T00:00Z**\" and \"**-9999-01-01T00:00Z**\" are both valid datetime strings.  The field after the two digit seconds field is a nanoseconds field. It can accept between 1 and 9 digits. So, for example, \"**1970-01-01T12:00:00.2Z**\", \"**1970-01-01T12:00:00.277Z**\" and \"**1970-01-01T12:00:00.123456789Z**\" are all valid datetime strings.  The seconds and nanoseconds fields are optional (the seconds field must be specified if the nanoseconds field is to be used).  The [time zone offset](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) is compulsory for this scalar. The time zone offset must either be `Z` (representing the UTC time zone) or be in the format `±hh:mm:ss`. The seconds field in the timezone offset will be considered valid even though it is not part of the ISO 8601 standard."
+scalar AWSDateTime
