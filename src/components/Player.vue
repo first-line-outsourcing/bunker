@@ -7,7 +7,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3 mt-3" v-for="card of player.cards">
+        <div class="col-lg-3 col-md-6 mt-3" v-for="card of player.cards">
           <CardComponent v-bind:card="card"></CardComponent>
         </div>
       </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <h5 class="card-title mb-0">{{ card.title }}</h5>
+      <h6 class="card-title mb-0">{{ card.title }}</h6>
     </div>
     <div class="card-body">
-      <h6 class="card-title mb-0">{{ card.text }}</h6>
+      <div class="card-text mb-0">{{ card.text }}</div>
     </div>
   </div>
 </template>
