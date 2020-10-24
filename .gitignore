@@ -14,7 +14,7 @@
  pnpm-debug.log*
 
  # Editor directories and files
- .idea
+ /.idea
  .vscode
  *.suo
  *.ntvs*
@@ -37,3 +37,11 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
+/.idea/aws.xml
+/.idea/bunker.iml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
