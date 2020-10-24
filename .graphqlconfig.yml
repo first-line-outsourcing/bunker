@@ -3,6 +3,7 @@ projects:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.ts
+      - aws_directives.graphql
     excludes:
       - ./amplify/**
     extensions:
@@ -10,3 +11,6 @@ projects:
         codeGenTarget: typescript
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
+extensions:
+  amplify:
+    version: 3
