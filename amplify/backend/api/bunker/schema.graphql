@@ -1,5 +1,42 @@
-type Todo @model {
+type User @model {
   id: ID!
   name: String!
-  description: String
+  players: [Player] @connection(keyName: "playerUser", fields: ["id"])
+}
+
+type Game @model
+{
+  id: ID!
+  host: Player @connection
+  players: [Player] @connection(keyName: "playerGame", fields: ["id"])
+}
+
+type Player @model
+@key(name: "playerGame", fields: ["gameID"])
+@key(name: "playerUser", fields: ["userID"]) {
+  id: ID!
+  gameID: ID!
+  userID: ID!
+  user: User @connection
+  cards: [PlayerCard] @connection(keyName: "byPlayer", fields: ["id"])
+  game: Game @connection
+}
+
+type PlayerCard
+@model(queries: null)
+@key(name: "byCard", fields: ["cardID", "playerID"])
+@key(name: "byPlayer", fields: ["playerID", "cardID"]) {
+  id: ID!
+  cardID: ID!
+  playerID: ID!
+  card: Card! @connection(fields: ["cardID"])
+  player: Player! @connection(fields: ["playerID"])
+}
+
+type Card @model {
+  id: ID!
+  category: String
+  title: String
+  text: String
+  players: [PlayerCard] @connection(keyName: "byCard", fields: ["id"])
 }
