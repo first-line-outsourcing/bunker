@@ -1,14 +1,17 @@
 <template>
   <div class="card">
+    <div class="card-header">
+      <h5 class="card-title mb-0">{{ card.title }}</h5>
+    </div>
     <div class="card-body">
-      <h5 class="card-title">{{ player.name }}</h5>
+      <h6 class="card-title mb-0">{{ card.text }}</h6>
     </div>
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator';
-  import { Card } from '@/components/inrefaces';
+  import { Card } from '@/components/interfaces';
 
   @Component
   export default class CardComponent extends Vue {
@@ -16,4 +19,8 @@
   }
 </script>
 
-<style scoped></style>
+<style scoped>
+  .card {
+    height: 100%;
+  }
+</style>

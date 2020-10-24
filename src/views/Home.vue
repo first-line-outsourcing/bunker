@@ -7,7 +7,8 @@
 </template>
 
 <script lang="ts">
-  import { Player } from '@/components/inrefaces';
+  import { Player } from '@/components/interfaces';
+  import { PLAYERS } from '@/components/mock/mock.service';
   import PlayerComponent from '@/components/Player.vue';
   import { Component, Vue } from 'vue-property-decorator';
 
@@ -17,22 +18,6 @@
     },
   })
   export default class Home extends Vue {
-    private players: Player[] = [
-      {
-        id: 1,
-        name: 'Eugene',
-        cards: [],
-      },
-      {
-        id: 2,
-        name: 'Andrew',
-        cards: [],
-      },
-      {
-        id: 3,
-        name: 'Alex',
-        cards: [],
-      },
-    ];
+    private players: Player[] = PLAYERS;
   }
 </script>
