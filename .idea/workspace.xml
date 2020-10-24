@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f05c3d-40a9-447b-9d2a-372b7065540e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/inrefaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/team-provider-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/team-provider-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Player.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Player.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -71,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603531430823</updated>
-      <workItem from="1603531436334" duration="5606000" />
+      <workItem from="1603531436334" duration="10504000" />
     </task>
     <servers />
   </component>
@@ -83,33 +86,33 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603535996795" />
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1603536446696">
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1603546327794">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603536446696" />
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603546327794" />
     <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.23.2560.1417@0.0.1280.800" timestamp="1603531891870" />
-    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1603536446693">
+    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1603546327791">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603536446693" />
+    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603546327791" />
     <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/1280.23.2560.1417@0.0.1280.800" timestamp="1603531891867" />
-    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1603536446692">
+    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1603546327789">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603536446692" />
+    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603546327789" />
     <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/1280.23.2560.1417@0.0.1280.800" timestamp="1603531891865" />
-    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1603536446694">
+    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1603546327793">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603536446694" />
+    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603546327793" />
     <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/1280.23.2560.1417@0.0.1280.800" timestamp="1603531891869" />
     <state x="388" y="120" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603532718396">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="388" y="120" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603532718396" />
-    <state x="304" y="195" key="git4idea.merge.GitPullDialog" timestamp="1603532732383">
+    <state x="304" y="195" key="git4idea.merge.GitPullDialog" timestamp="1603544134999">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="304" y="195" key="git4idea.merge.GitPullDialog/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603532732383" />
+    <state x="304" y="195" key="git4idea.merge.GitPullDialog/0.0.1280.800/1280.0.2560.1440@0.0.1280.800" timestamp="1603544134999" />
   </component>
 </project>

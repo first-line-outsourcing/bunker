@@ -1,20 +1,38 @@
 <template>
-  <div>
-    <Player player="Magic"></Player>
-    <span>{{ list }}</span>
+  <div class="row pr-3 pl-3">
+    <div class="col-md-4" v-for="player of players">
+      <PlayerComponent v-bind:player="player"></PlayerComponent>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import Player from "@/components/Player.vue";
+  import { Player } from '@/components/inrefaces';
+  import PlayerComponent from '@/components/Player.vue';
+  import { Component, Vue } from 'vue-property-decorator';
 
-@Component({
-  components: {
-    Player
+  @Component({
+    components: {
+      PlayerComponent,
+    },
+  })
+  export default class Home extends Vue {
+    private players: Player[] = [
+      {
+        id: 1,
+        name: 'Eugene',
+        cards: [],
+      },
+      {
+        id: 2,
+        name: 'Andrew',
+        cards: [],
+      },
+      {
+        id: 3,
+        name: 'Alex',
+        cards: [],
+      },
+    ];
   }
-})
-export default class Home extends Vue {
-  list = 123;
-}
 </script>

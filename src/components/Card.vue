@@ -7,12 +7,12 @@
 </template>
 
 <script lang="ts">
-  import { Player } from '@/components/inrefaces';
   import { Component, Prop, Vue } from 'vue-property-decorator';
+  import { Card } from '@/components/inrefaces';
 
   @Component
-  export default class PlayerComponent extends Vue {
-    @Prop() private player!: Player;
+  export default class CardComponent extends Vue {
+    @Prop() private card!: Card;
   }
 </script>
 
